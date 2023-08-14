@@ -13,7 +13,7 @@ namespace MyConsoleApp
         {
             Console.WriteLine("Hi there!");
 
-            // wrong commit
+            // wrong commit to master
         }
     }
 }
