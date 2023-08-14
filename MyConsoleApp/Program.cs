@@ -13,8 +13,7 @@ namespace MyConsoleApp
         {
             Console.WriteLine("Hi there!");
 
-            // subtask_1
-            // subtask_2
+            // wrong commit
         }
     }
 }
