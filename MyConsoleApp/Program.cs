@@ -12,6 +12,8 @@ namespace MyConsoleApp
         static void Main()
         {
             Console.WriteLine("Hi there!");
+
+            // subtask_1
         }
     }
 }
