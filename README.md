@@ -1,2 +1,2 @@
 # MyConsoleApp
-This is a test project with my console application
+This is a test project with a simple console application
