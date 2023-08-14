@@ -117,6 +117,11 @@ namespace MyConsoleApp
             Fraction result = new Fraction(number);
             return result;
         }
+        public Fraction FractionWithInteger1(int number1)
+        {
+            Fraction result = new Fraction(number1);
+            return result;
+        }
 
         public Fraction FractionReduce(Fraction improperFraction)
         {

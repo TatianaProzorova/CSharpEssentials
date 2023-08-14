@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace MyConsoleApp
 {
-    //=============================================
     public class User
     {
         public string Name { get; set; }
@@ -59,7 +58,8 @@ namespace MyConsoleApp
     {
         static void Main()
         {
-            // Add code here
+            //Console.WriteLine("Hi there!");
+            // Add more code here
         }
     }
 }
