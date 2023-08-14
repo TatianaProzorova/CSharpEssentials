@@ -65,37 +65,6 @@ namespace MyConsoleApp
         }
     }
     //=============================================
-    public class Matrix
-    {
-        private int[,] numbers;
-        public Matrix()
-        {
-            numbers = new int[,] {
-                { 1, 2, 4 },
-                { 2, 3, 6 },
-                { 3, 4, 8 }
-            };
-        }
-
-        public int this[int row, int column]
-        {
-            get 
-            {
-                if (row < 0 || row >= numbers.GetLength(0) || column < 0 || column >= numbers.GetLength(1))
-                    throw new ArgumentException("One or more indexes are out of range");
-                
-                return numbers[row, column]; 
-            } 
-            set 
-            {
-                if (row < 0 || row >= numbers.GetLength(0) || column < 0 || column >= numbers.GetLength(1))
-                    throw new ArgumentException("One or more indexes are out of range"); 
-                
-                numbers[row, column] = value; 
-            }
-        }
-    }
-    //=============================================
     public class Triangle
     {
         public double A { get; set; }
@@ -173,8 +142,7 @@ namespace MyConsoleApp
     {
         static void Main()
         {
-
-
+            // Add some comment
         }
     }
 }
