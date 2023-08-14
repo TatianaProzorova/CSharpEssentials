@@ -1,5 +1,4 @@
-﻿using MyConsoleApp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -58,8 +57,7 @@ namespace MyConsoleApp
     {
         static void Main()
         {
-            //Console.WriteLine("Hi there!");
-            // Add more code here
+            Console.WriteLine("Hi there!");
         }
     }
 }
