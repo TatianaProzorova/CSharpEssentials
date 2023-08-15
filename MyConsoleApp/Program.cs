@@ -16,6 +16,7 @@ namespace MyConsoleApp
             // commit in local repository
             // push to remote repository
             // commit to remote repository
+            // commit to new branch in GitHub
         }
     }
 }
