@@ -13,7 +13,8 @@ namespace MyConsoleApp
         {
             Console.WriteLine("Hi there!");
 
-            // wrong commit to master
+            // commit in local repository
+            // push to remote repository
         }
     }
 }
