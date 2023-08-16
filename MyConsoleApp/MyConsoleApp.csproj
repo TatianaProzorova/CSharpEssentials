@@ -54,6 +54,7 @@
     <Compile Include="BaseDate.cs" />
     <Compile Include="Community.cs" />
     <Compile Include="EuropeanDate.cs" />
+    <Compile Include="MyFile.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
