@@ -62,7 +62,7 @@ namespace MyConsoleApp
     {
         static void Main()
         {
-            // changes for review
+          // changes for review
 
             Console.WriteLine(new Summator().Sum(5)); // 15
             Console.WriteLine(new PowerSummator(1).Sum(5)); // 15
