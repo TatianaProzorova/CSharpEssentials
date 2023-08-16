@@ -9,14 +9,14 @@ namespace MyConsoleApp
 {
     public class Summator
     {
-        int Item { get; set; }
+        public int Item { get; set; }
 
         public Summator()
         {
             Item = Transform(Item);
         }
 
-        protected virtual int Transform(int item)
+        private int Transform(int item)
         {
             return item;
         } 
@@ -26,43 +26,54 @@ namespace MyConsoleApp
             int sum = 0;
 
             for (int i = 1; i <= n; i++)
-            {
                 sum += Transform(i);
-            }
 
             return sum;
         }
     }
 
-    public class SquareSummator : Summator
+    public class SquareSummator : PowerSummator
     {
-        public SquareSummator() : base() 
+        public SquareSummator() : base(2) 
         { }
+    }
 
-        protected override int Transform(int item)
+    public class CubeSummator : PowerSummator
+    {
+        public CubeSummator() : base(3)
+        { }
+    }
+
+    public class PowerSummator : Summator
+    {
+        public PowerSummator(int power) : base()
         {
-            return item * item;
+            Item = Transform(Item, power);
+        }
+
+        private int Transform(int item, int power)
+        {
+            return (int)Math.Pow(item, power);
         }
     }
 
-    public class CubeSummator : Summator
-    {
-        public CubeSummator() : base()
-        { }
-
-        protected override int Transform(int item)
-        {
-            return item * item * item;
-        }
-    }
 
     class Program
     {
         static void Main()
         {
+            //Console.WriteLine(new Summator().Sum(5)); // 15
+            //Console.WriteLine(new SquareSummator().Sum(5)); // 55
+            //Console.WriteLine(new CubeSummator().Sum(5)); // 225
+
             Console.WriteLine(new Summator().Sum(5)); // 15
+            Console.WriteLine(new PowerSummator(1).Sum(5)); // 15
+
             Console.WriteLine(new SquareSummator().Sum(5)); // 55
+            Console.WriteLine(new PowerSummator(2).Sum(5)); // 55
+
             Console.WriteLine(new CubeSummator().Sum(5)); // 225
+            Console.WriteLine(new PowerSummator(3).Sum(5)); // 225
 
             //BaseDate date = new BaseDate(2021, 1, 13);
             //AmericanDate date1 = new AmericanDate(2021, 1, 6);
