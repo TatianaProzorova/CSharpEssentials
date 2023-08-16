@@ -62,10 +62,6 @@ namespace MyConsoleApp
     {
         static void Main()
         {
-            //Console.WriteLine(new Summator().Sum(5)); // 15
-            //Console.WriteLine(new SquareSummator().Sum(5)); // 55
-            //Console.WriteLine(new CubeSummator().Sum(5)); // 225
-
             Console.WriteLine(new Summator().Sum(5)); // 15
             Console.WriteLine(new PowerSummator(1).Sum(5)); // 15
 
