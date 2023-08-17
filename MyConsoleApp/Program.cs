@@ -11,12 +11,7 @@ namespace MyConsoleApp
     {
         public int Item { get; set; }
 
-        public Summator()
-        {
-            Item = Transform(Item);
-        }
-
-        private int Transform(int item)
+        protected virtual int Transform(int item)
         {
             return item;
         } 
@@ -46,14 +41,15 @@ namespace MyConsoleApp
 
     public class PowerSummator : Summator
     {
-        public PowerSummator(int power) : base()
+        protected int Power { get; set; } 
+        public PowerSummator(int power)
         {
-            Item = Transform(Item, power);
+            Power = power;
         }
 
-        private int Transform(int item, int power)
+        protected override int Transform(int item)
         {
-            return (int)Math.Pow(item, power);
+            return (int)Math.Pow(item, Power);
         }
     }
 
