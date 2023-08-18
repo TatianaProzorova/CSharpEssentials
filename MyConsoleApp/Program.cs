@@ -9,7 +9,7 @@ namespace MyConsoleApp
 {
     public class Profile
     {
-        public string ProfessionName { get; set; }
+        public string ProfessionName { get; }
 
         public Profile(string professionName)
         {
@@ -29,7 +29,7 @@ namespace MyConsoleApp
 
     public class Vacancy : Profile
     {
-        private int Compensation { get; set; }
+        private int Compensation { get; }
         public Vacancy(string ProfessionName, int compensation) : base(ProfessionName)
         { 
             Compensation = compensation;
