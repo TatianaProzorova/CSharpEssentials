@@ -53,12 +53,16 @@
     <Compile Include="AmericanDate.cs" />
     <Compile Include="BaseDate.cs" />
     <Compile Include="Community.cs" />
+    <Compile Include="CubeSummator.cs" />
     <Compile Include="EuropeanDate.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="PowerSummator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Fraction.cs" />
     <Compile Include="IntegrationTests\Test1.cs" />
+    <Compile Include="SquareSummator.cs" />
+    <Compile Include="Summator.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
