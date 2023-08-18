@@ -50,20 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AmericanDate.cs" />
-    <Compile Include="BaseDate.cs" />
-    <Compile Include="Community.cs" />
-    <Compile Include="CubeSummator.cs" />
-    <Compile Include="EuropeanDate.cs" />
-    <Compile Include="Person.cs" />
-    <Compile Include="PowerSummator.cs" />
+    <Compile Include="DateConvertion\AmericanDate.cs" />
+    <Compile Include="DateConvertion\BaseDate.cs" />
+    <Compile Include="User\Community.cs" />
+    <Compile Include="Summator\CubeSummator.cs" />
+    <Compile Include="DateConvertion\EuropeanDate.cs" />
+    <Compile Include="User\Person.cs" />
+    <Compile Include="Summator\PowerSummator.cs" />
+    <Compile Include="HeadHunter\Profile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Fraction.cs" />
+    <Compile Include="Fraction\Fraction.cs" />
     <Compile Include="IntegrationTests\Test1.cs" />
-    <Compile Include="SquareSummator.cs" />
-    <Compile Include="Summator.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="HeadHunter\Resume.cs" />
+    <Compile Include="Summator\SquareSummator.cs" />
+    <Compile Include="Summator\Summator.cs" />
+    <Compile Include="User\User.cs" />
+    <Compile Include="HeadHunter\Vacancy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
