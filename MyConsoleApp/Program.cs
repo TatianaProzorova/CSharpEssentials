@@ -21,23 +21,37 @@ namespace MyConsoleApp
             return String.Empty;
         }
 
-        public void Describe(string professionName)
+        public void Describe()
         {
-            string result;
-            result = GetInfo();
-            Console.WriteLine($"{professionName}, {result}");
+            Console.WriteLine($"{ProfessionName}, {GetInfo()}");
         }            
     }
 
     public class Vacancy : Profile
     {
-        private int Compensation { get; }
-        public Vacancy(string ProfessionName, int Compensation) : base(ProfessionName)
-        { }
+        private int Compensation { get; set; }
+        public Vacancy(string ProfessionName, int compensation) : base(ProfessionName)
+        { 
+            Compensation = compensation;
+        }
 
         protected override string GetInfo()
         {
             return $"Предлагаемая зарплата: {Compensation}";  
+        }
+    }
+
+    public class Resume : Profile
+    {
+        private int WorkExperience { get; }
+        public Resume(string ProfessionName, int workExperience) : base(ProfessionName)
+        { 
+            WorkExperience = workExperience;
+        }
+
+        protected override string GetInfo()
+        {
+            return $"Стаж работы: {WorkExperience}";
         }
     }
 
