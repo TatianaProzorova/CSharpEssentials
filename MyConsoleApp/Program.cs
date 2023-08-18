@@ -29,6 +29,17 @@ namespace MyConsoleApp
         }            
     }
 
+    public class Vacancy : Profile
+    {
+        private int Compensation { get; }
+        public Vacancy(string ProfessionName, int Compensation) : base(ProfessionName)
+        { }
+
+        protected override string GetInfo()
+        {
+            return $"Предлагаемая зарплата: {Compensation}";  
+        }
+    }
 
     class Program
     {
