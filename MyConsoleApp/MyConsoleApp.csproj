@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DateConvertion\AmericanDate.cs" />
     <Compile Include="DateConvertion\BaseDate.cs" />
+    <Compile Include="Equals.Player\Player.cs" />
     <Compile Include="User\Community.cs" />
     <Compile Include="Summator\CubeSummator.cs" />
     <Compile Include="DateConvertion\EuropeanDate.cs" />
