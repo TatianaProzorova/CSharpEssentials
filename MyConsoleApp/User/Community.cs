@@ -1,6 +1,6 @@
 ﻿namespace MyConsoleApp
 {
-    public class Community : User
+    public class Community : UserOld
     {
         string Description { get; set; }
         public Community(string name, string description) : base(name) 

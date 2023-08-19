@@ -1,6 +1,6 @@
 ﻿namespace MyConsoleApp
 {
-    public class Person : User
+    public class Person : UserOld
     {
         public int Age { get; set; }
         public Person (string name, int age) : base(name)
@@ -11,7 +11,7 @@
         {
             return $"Имя={Name}, Возраст={Age}";
         }
-        public void Subscribe(User user)
+        public void Subscribe(UserOld user)
         { }
     }
 }
