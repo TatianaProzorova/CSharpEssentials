@@ -6,22 +6,11 @@ namespace MyConsoleApp
     {
         public struct Money
         {
-            private decimal ruble;
-            private decimal kopeck;
-            public decimal Ruble 
-            {
-                get { return ruble; }
-                set
-                {
-                    if (value < 0)
-                    {
-                        throw new ArgumentException("Rubles must not be < 0");
-                    }
-                    else ruble = value;
-                }
-            }
+            private int ruble;
+            private int kopeck;
+            public int Ruble { get; set; }
 
-            public decimal Kopeck
+            public int Kopeck
             {
                 get { return kopeck; }
                 set
@@ -34,7 +23,7 @@ namespace MyConsoleApp
                 }
             }
 
-            public Money(decimal ruble, decimal kopeck)
+            public Money(int ruble, int kopeck)
             {                
                 this.ruble = ruble;
                 this.kopeck = kopeck;
@@ -47,7 +36,31 @@ namespace MyConsoleApp
                 return $"{ruble}, {string.Format("{0:00}", kopeck)}";
             }
 
+            public static Money operator +(Money money1, Money money2)
+            {
+                int resultKopeck = money1.ruble * 100 + money1.kopeck + money2.ruble * 100 + money2.kopeck;
+                int resultRuble = resultKopeck / 100;
+                resultKopeck %= 100;
+
+                return new Money(resultRuble, resultKopeck);
+            }
+
+            public static Money operator -(Money money1, Money money2)
+            {
+                int resultKopeck = (money1.ruble * 100 + money1.kopeck) - (money2.ruble * 100 + money2.kopeck);
+                int resultRuble = resultKopeck / 100; 
+                
+                if (resultKopeck < 0) {
+                    resultKopeck = Math.Abs(resultKopeck);
+                }                
+                
+                resultKopeck %= 100;
+
+                return new Money(resultRuble, resultKopeck);
+            }
+
             // code from Main()
+
             //Money money1 = new Money(10, 50);
             //Console.WriteLine(money1); // 10, 50
 
@@ -56,6 +69,20 @@ namespace MyConsoleApp
             //Console.WriteLine(money1); // 4, 05
 
             //money1.Kopeck = 100; // ошибка
+
+            //=================================
+
+            //Money money1 = new Money(11, 51);
+            //Money money2 = new Money(25, 90);
+
+            //Money money3 = money1 + money2;
+            //Console.WriteLine(money3); // 37, 41
+
+            //Money money4 = money3 - money2;
+            //Console.WriteLine(money4); // 11, 51
+
+            //Money money5 = money1 - money2;
+            //Console.WriteLine(money5); // -14, 39
         }
     }
 }
