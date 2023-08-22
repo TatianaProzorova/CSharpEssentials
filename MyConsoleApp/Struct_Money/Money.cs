@@ -2,8 +2,6 @@
 
 namespace MyConsoleApp
 {
-    public partial class Program
-    {
         public struct Money
         {
             private int ruble;
@@ -84,5 +82,5 @@ namespace MyConsoleApp
             //Money money5 = money1 - money2;
             //Console.WriteLine(money5); // -14, 39
         }
-    }
+    
 }
