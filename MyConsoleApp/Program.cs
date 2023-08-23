@@ -14,45 +14,36 @@ namespace MyConsoleApp
 {
     class Program
     {
-        delegate void MeasureMethod(int repeatCount);
+        delegate bool Predicate(int age);
 
         static void Main()
         {
-            MeasureMethod method1 = StringMeasure;
-            Measure(method1);
+            Predicate predicate = IsAdult;
+            List<int> listOfAges = new List<int>() { 5,12,33,66}; 
+           
+            listOfAges = GetAdults(listOfAges, predicate);
 
-            MeasureMethod method2 = StringBuilderMeasure;
-            Measure(method2);
-        }
-
-        private static void Measure(MeasureMethod measureMethod)
-        {
-            int repeatCount = 10000;
-
-            Stopwatch time = Stopwatch.StartNew();
-
-            measureMethod?.Invoke(repeatCount);
-
-            time.Stop();
-            Console.WriteLine(time.Elapsed.TotalMilliseconds);
-        }
-
-        private static void StringBuilderMeasure(int repeatCount)
-        {
-            StringBuilder stringBuilderResult = new StringBuilder("Test");
-            for (int i = 0; i < repeatCount; i++)
+            foreach (int age in listOfAges) 
             {
-                stringBuilderResult.Append("{i}");
+                Console.Write($"{age} "); 
             }
         }
 
-        private static void StringMeasure(int repeatCount)
+        private static List<int> GetAdults(List<int> ages, Predicate predicate)
         {
-            string stringResult = "Test";
-            for (int i = 0; i < repeatCount; i++)
-            {
-                stringResult += "{i}";
+            List<int> list = new List<int>();
+            foreach (int age in ages) 
+            { 
+                if (predicate(age)) 
+                    list.Add(age);
             }
+
+            return list;
+        }
+
+        private static bool IsAdult(int age)
+        {
+            return age >= 18;
         }
     }
 }
