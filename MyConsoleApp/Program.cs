@@ -18,20 +18,29 @@ namespace MyConsoleApp
 
         static void Main()
         {
-            Predicate predicate = IsAdult;
-            List<int> listOfAges = new List<int>() { 5,12,33,66}; 
-           
-            listOfAges = GetAdults(listOfAges, predicate);
+            //Predicate predicate = IsAdult;
+            List<int> ages = new List<int> { 5,12,33,66};
 
-            foreach (int age in listOfAges) 
+            List<int> adults = GetAdults(ages, IsAdult);
+
+            foreach (int adult in adults) 
             {
-                Console.Write($"{age} "); 
+                Console.Write($"{adult} "); 
             }
+
+            //List<int> years = new List<int> { 13, 17, 18, 19, 20, 50 };
+
+            //List<int> adults = GetAdults(years, IsAdult);
+
+            //foreach (var adult in adults)
+            //{
+            //    Console.WriteLine(adult);
+            //}
         }
 
         private static List<int> GetAdults(List<int> ages, Predicate predicate)
         {
-            List<int> list = new List<int>();
+            List<int> list = new List<int> { };
             foreach (int age in ages) 
             { 
                 if (predicate(age)) 
