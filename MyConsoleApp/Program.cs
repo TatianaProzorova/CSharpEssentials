@@ -12,47 +12,59 @@ using System.Diagnostics;
 
 namespace MyConsoleApp
 {
+    public class User
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+
+        public User(string name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}, {Age}";
+        }
+    }
+
     class Program
     {
-        delegate bool Predicate(int age);
+        delegate void Rule(User user);
+
+        private static void LongNameRule(User user)
+        {
+            if (user.Name.Length > 10)
+            {
+                user.Name = user.Name.Substring(0, 10);
+            }
+        }
+
+        private static List<User> TransformUsersByRule(List<User> users, Rule rule)
+        {
+            foreach (User user in users) 
+            {
+                rule(user);
+            }
+            return users;
+        }
 
         static void Main()
         {
-            //Predicate predicate = IsAdult;
-            List<int> ages = new List<int> { 5,12,33,66};
-
-            List<int> adults = GetAdults(ages, IsAdult);
-
-            foreach (int adult in adults) 
+            List<User> users = new List<User>
             {
-                Console.Write($"{adult} "); 
+                new User("namenamename", 25),
+                new User("1234567890", 34),
+                new User("123456", 14),
+            };
+
+            List<User> transformedUsers = TransformUsersByRule(users, LongNameRule);
+
+            foreach (var user in transformedUsers)
+            {
+                Console.WriteLine(user);
             }
-
-            //List<int> years = new List<int> { 13, 17, 18, 19, 20, 50 };
-
-            //List<int> adults = GetAdults(years, IsAdult);
-
-            //foreach (var adult in adults)
-            //{
-            //    Console.WriteLine(adult);
-            //}
-        }
-
-        private static List<int> GetAdults(List<int> ages, Predicate predicate)
-        {
-            List<int> list = new List<int> { };
-            foreach (int age in ages) 
-            { 
-                if (predicate(age)) 
-                    list.Add(age);
-            }
-
-            return list;
-        }
-
-        private static bool IsAdult(int age)
-        {
-            return age >= 18;
         }
     }
 }
