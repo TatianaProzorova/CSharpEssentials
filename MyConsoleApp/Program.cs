@@ -41,6 +41,11 @@ namespace MyConsoleApp
             }
         }
 
+        private static void IncreaseAge(User user)
+        {
+            user.Age++;
+        }
+
         private static List<User> TransformUsersByRule(List<User> users, Rule rule)
         {
             foreach (User user in users) 
@@ -60,6 +65,8 @@ namespace MyConsoleApp
             };
 
             List<User> transformedUsers = TransformUsersByRule(users, LongNameRule);
+
+            transformedUsers = TransformUsersByRule(users, IncreaseAge);
 
             foreach (var user in transformedUsers)
             {
