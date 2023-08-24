@@ -1,29 +1,35 @@
 ﻿using System.Collections.Generic;
 using System;
+using static MyConsoleApp.Program;
 
 namespace MyConsoleApp
 {
     class Program
     {
-        static void Main()
+        public enum Months
         {
-            Func<int, bool> predicate = delegate (int number)
-            {
-                return Math.Pow(number, 2) % 10 == 9;
-            };
-
-            Print(new List<int> { 1, 2, 3, 4, 5, 7, 13, 27 }, predicate);
+            January,
+            February,
+            March,
+            April,
+            May,
+            June,
+            July,
+            August,
+            September,
+            October,
+            November,
+            December
         }
 
-        static void Print(List<int> items, Func<int, bool> predicate)
+        public static int GetDay(Months month)
         {
-            foreach (var item in items)
-            {
-                if (predicate(item))
-                {
-                    Console.Write(item + " ");
-                }
-            }
+            return DateTime.DaysInMonth(2023, (int)month + 1); // enum index starts from zero
+        }
+
+        static void Main()
+        {
+                Console.WriteLine($"{GetDay(Months.February)}");
         }
     }
 }
