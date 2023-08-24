@@ -6,35 +6,40 @@ namespace MyConsoleApp
 {
     class Program
     {
-        public enum Operations
+        public enum Colors
         {
-            Add,
-            Subtract,
-            Multiply,
-            Divide
+            Red,
+            Black,
+            Yellow,
+            White
         }
 
-        public static double Calc(double item1, double item2, Operations operation)
+        public enum Languages
         {
-            if (operation == Operations.Divide && item2 == 0)
-            {
-                throw new ArgumentException("Divide by zero exception");
-            }
+            English,
+            Russian
+        }
 
-            switch (operation)
+        public static string ColorTranslate(Colors color, Languages language)
+        {
+            switch (color, language)
             {
-                case Operations.Add: return item1 + item2;  
-                case Operations.Subtract: return item1 - item2; 
-                case Operations.Multiply: return item1 * item2; 
-                case Operations.Divide: return item1 / item2;                  
-                default: return 0;
+                case (Colors.Red, Languages.Russian): return "Красный";
+                case (Colors.Black, Languages.Russian): return "Чёрный";
+                case (Colors.Yellow, Languages.Russian): return "Жёлтый";
+                case (Colors.White, Languages.Russian): return "Белый";
+                case (Colors.Red, Languages.English): return "Red";
+                case (Colors.Black, Languages.English): return "Black";
+                case (Colors.Yellow, Languages.English): return "Yellow";
+                case (Colors.White, Languages.English): return "White";
+                default: return String.Empty;
             }
         }
 
         static void Main()
         {
-            Console.WriteLine(Calc(2.5, 2, Operations.Add));
-            Console.WriteLine(Calc(2.5, 2, Operations.Subtract));
+            Console.WriteLine(ColorTranslate(Colors.Red, Languages.Russian)); // Красный
+            Console.WriteLine(ColorTranslate(Colors.Red, Languages.English)); // Red
         }
     }
 }
