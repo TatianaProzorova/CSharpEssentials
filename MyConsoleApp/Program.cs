@@ -7,20 +7,23 @@ namespace MyConsoleApp
     {
         static void Main()
         {
-            Print(new List<int> { 1, 2, 3, 4, 5 }, Twice);
+            Print(new List<int> { 1, 2, 3, 4, 5 }, IsEven);
         }
 
-        static void Print(List<int> items, Action<int> action)
+        static void Print(List<int> items, Func<int, bool> predicate)
         {
             foreach (var item in items)
             {
-                action(item);
+                if (predicate(item))
+                {
+                    Console.Write(item + " ");
+                }
             }
         }
 
-        static void Twice(int item)
+        private static bool IsEven(int item)
         {
-            Console.Write($"{item * 2} ");
+            return item % 2 == 0;
         }
     }
 }
