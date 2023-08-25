@@ -6,30 +6,25 @@ namespace MyConsoleApp
 {
     class Program
     {
-        public class Phone
+        public class MyClass
         {
-            public string Name { get; }
-            public decimal Cost { get; }
-            public Phone(string name, decimal cost)
+            public void Method1()
             {
-                if (name != null)
-                    Name = name;
-                else throw new ArgumentNullException("Имя не может быть равно null!");
 
-                if (name != String.Empty && name.Length >= 2 && name.Length <= 150)
-                    Name = name;
-                else throw new ArgumentException("Имя должно содержать от 2 до 50 символов!");
-
-                if (cost > 0)
-                    Cost = cost;
-                else throw new ArgumentException("Значение цены должно быть положительным!");
             }
         }
         
         static void Main()
         {
-
-            Console.WriteLine("Дальнейшеее выполнение программы");
+            try
+            {
+                MyClass action = new MyClass();
+                action.Method1();
+            }
+            catch (MyException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
