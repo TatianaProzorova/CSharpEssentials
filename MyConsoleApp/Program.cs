@@ -5,21 +5,31 @@ using System.Configuration;
 
 namespace MyConsoleApp
 {
-    public interface IPerson
+    public interface IInterfaceA
     {
-        string Name { get; set; }
-        int Age { get; set; }
+        bool Prop1 { get; set; }
+        int Prop2 { get; set; }
     }
-    
-    public interface IStudent : IPerson
+
+    public interface IInterfaceB
     {
-        int Course { get; set; }
-        void Learn(string subject);
+        string Prop3 { get; set; }
+        void Method1(string param);
+    }
+
+    public class MyClass : IInterfaceA, IInterfaceB
+    {
+        public bool Prop1 { get; set; }
+        public int Prop2 { get; set; }
+        public string Prop3 { get; set; }
+        public void Method1(string param)
+        {
+            // some logic
+        }
     }
 
     class Program
     {
-
         static void Main()
         {
 
