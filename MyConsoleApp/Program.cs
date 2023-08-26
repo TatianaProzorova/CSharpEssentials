@@ -5,17 +5,20 @@ using System.Configuration;
 
 namespace MyConsoleApp
 {
+    public interface IPerson
+    {
+        string Name { get; set; }
+        int Age { get; set; }
+    }
+    
+    public interface IStudent : IPerson
+    {
+        int Course { get; set; }
+        void Learn(string subject);
+    }
+
     class Program
     {
-        public interface IStudent
-        {
-            string Name { get; set; }
-            void ListeningLection();
-
-            void DoHomework(string excersize);
-
-            void PrepareToExam();
-        }
 
         static void Main()
         {
