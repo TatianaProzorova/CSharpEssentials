@@ -7,33 +7,14 @@ namespace MyConsoleApp
 {
     class Program
     {
-        public class User
+        public interface IStudent
         {
-            public string Name;
-            public string Email;
-            public string Password;
+            string Name { get; set; }
+            void ListeningLection();
 
-            public User(string name, string email, string password)
-            {
-                Name = name;
-                Email = email;
-                Password = password;
-            }
-        }
+            void DoHomework(string excersize);
 
-        public class UserManager
-        {
-            public List<User> Users {get;}
-            
-            public UserManager()
-            {
-                Users = new List<User>();
-            }  
-            
-            public void Register(User user)
-            {
-                Users.Add(user);
-            }
+            void PrepareToExam();
         }
 
         static void Main()
