@@ -2,37 +2,49 @@
 using System;
 using static MyConsoleApp.Program;
 using System.Configuration;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MyConsoleApp
 {
     public interface IInterfaceA
     {
-        bool Prop1 { get; set; }
-        int Prop2 { get; set; }
+        void Method1();
     }
 
     public interface IInterfaceB
     {
-        string Prop3 { get; set; }
-        void Method1(string param);
+        void Method1();
     }
 
     public class MyClass : IInterfaceA, IInterfaceB
     {
-        public bool Prop1 { get; set; }
-        public int Prop2 { get; set; }
-        public string Prop3 { get; set; }
-        public void Method1(string param)
+        public void Method1()
         {
-            // some logic
+            Console.WriteLine("MyClass.Method1");
+        }
+
+        void IInterfaceA.Method1()
+        {
+            Console.WriteLine("IInterfaceA.Method1");
+        }
+
+        void IInterfaceB.Method1()
+        {
+            Console.WriteLine("IInterfaceB.Method1");
         }
     }
-
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
+            MyClass myClass = new MyClass();
+            myClass.Method1();
 
+            IInterfaceA a = myClass;
+            a.Method1();
+
+            IInterfaceB b = myClass;
+            b.Method1();
         }
     }
 }
