@@ -3,48 +3,80 @@ using System;
 using static MyConsoleApp.Program;
 using System.Configuration;
 using System.Security.Cryptography.X509Certificates;
+using System.Collections;
 
 namespace MyConsoleApp
 {
-    public interface IInterfaceA
+    public class Flat
     {
-        void Method1();
-    }
+        public int Number { get; set; }
+        public int RoomsCount { get; set; }
 
-    public interface IInterfaceB
-    {
-        void Method1();
-    }
-
-    public class MyClass : IInterfaceA, IInterfaceB
-    {
-        public void Method1()
-        {
-            Console.WriteLine("MyClass.Method1");
-        }
-
-        void IInterfaceA.Method1()
-        {
-            Console.WriteLine("IInterfaceA.Method1");
-        }
-
-        void IInterfaceB.Method1()
-        {
-            Console.WriteLine("IInterfaceB.Method1");
+        public override string ToString()
+        { 
+            return $"Квартира с номером {Number} имеет {RoomsCount} комнат";
         }
     }
+
+    public class Entrance : IEnumerable
+    {
+        private readonly Flat[] flats;
+
+        public Entrance(Flat[] flats)
+        {
+            this.flats = flats;
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return new EntranceEnumerator(flats);
+        }
+    }
+
+    public class EntranceEnumerator : IEnumerator
+    {
+        private readonly Flat[] flats;
+        private int currentIndex = -1;
+
+        public EntranceEnumerator(Flat[] flats)
+        {
+            this.flats = flats;
+        }
+
+        public object Current => flats[currentIndex];
+
+        public bool MoveNext()
+        {
+            currentIndex++;
+            if (currentIndex >= flats.Length)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public void Reset()
+        {
+            currentIndex = -1;
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            MyClass myClass = new MyClass();
-            myClass.Method1();
+            Flat flat1 = new Flat();
+            Flat flat2 = new Flat();
 
-            IInterfaceA a = myClass;
-            a.Method1();
+            Flat[] flats = new Flat[] { flat1, flat2 };
 
-            IInterfaceB b = myClass;
-            b.Method1();
+            Entrance entrance = new Entrance(flats);
+
+            foreach (var flat in entrance)
+            {
+                Console.WriteLine(((Flat)flat).Number); 
+            }
         }
     }
 }
