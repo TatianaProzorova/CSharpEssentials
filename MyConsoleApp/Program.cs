@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System;
-using static MyConsoleApp.Program;
-using System.Configuration;
-using System.Security.Cryptography.X509Certificates;
+﻿using System;
 using System.Collections;
 
 namespace MyConsoleApp
