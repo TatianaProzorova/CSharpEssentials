@@ -52,7 +52,10 @@
   <ItemGroup>
     <Compile Include="DateConvertion\AmericanDate.cs" />
     <Compile Include="DateConvertion\BaseDate.cs" />
+    <Compile Include="Intreface.Flat\Entrance.cs" />
+    <Compile Include="Intreface.Flat\EntranceEnumerator.cs" />
     <Compile Include="Equals.Player\Player.cs" />
+    <Compile Include="Intreface.Flat\Flat.cs" />
     <Compile Include="Struct_Money\Money.cs" />
     <Compile Include="Static method Point\Point.cs" />
     <Compile Include="User\Community.cs" />
