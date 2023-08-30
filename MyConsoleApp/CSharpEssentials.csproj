@@ -56,8 +56,10 @@
     <Compile Include="Intreface.Flat\EntranceEnumerator.cs" />
     <Compile Include="Equals.Player\Player.cs" />
     <Compile Include="Intreface.Flat\Flat.cs" />
+    <Compile Include="IUsersStorage.cs" />
     <Compile Include="Struct_Money\Money.cs" />
     <Compile Include="Static method Point\Point.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="User.Person.Community\Community.cs" />
     <Compile Include="Summator\CubeSummator.cs" />
     <Compile Include="DateConvertion\EuropeanDate.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Summator\Summator.cs" />
     <Compile Include="User.Person.Community\User.cs" />
     <Compile Include="HeadHunter\Vacancy.cs" />
+    <Compile Include="UsersInMemoryStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
