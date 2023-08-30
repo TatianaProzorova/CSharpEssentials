@@ -58,10 +58,10 @@
     <Compile Include="Intreface.Flat\Flat.cs" />
     <Compile Include="Struct_Money\Money.cs" />
     <Compile Include="Static method Point\Point.cs" />
-    <Compile Include="User\Community.cs" />
+    <Compile Include="User.Person.Community\Community.cs" />
     <Compile Include="Summator\CubeSummator.cs" />
     <Compile Include="DateConvertion\EuropeanDate.cs" />
-    <Compile Include="User\Person.cs" />
+    <Compile Include="User.Person.Community\Person.cs" />
     <Compile Include="Summator\PowerSummator.cs" />
     <Compile Include="HeadHunter\Profile.cs" />
     <Compile Include="Program.cs" />
@@ -70,7 +70,7 @@
     <Compile Include="HeadHunter\Resume.cs" />
     <Compile Include="Summator\SquareSummator.cs" />
     <Compile Include="Summator\Summator.cs" />
-    <Compile Include="User\User.cs" />
+    <Compile Include="User.Person.Community\User.cs" />
     <Compile Include="HeadHunter\Vacancy.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IntegrationTests\" />
+    <Folder Include="Interface.User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
