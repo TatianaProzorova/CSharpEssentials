@@ -55,6 +55,7 @@
     <Compile Include="Extentions.GetSumCost\GetProductsCost.cs" />
     <Compile Include="Extentions.GetFileExtention\FileFormat.cs" />
     <Compile Include="Extentions.GetFileExtention\GetExtension.cs" />
+    <Compile Include="Var.AnonymousObjects\Furniture.cs" />
     <Compile Include="Intreface.Flat\Entrance.cs" />
     <Compile Include="Intreface.Flat\EntranceEnumerator.cs" />
     <Compile Include="Equals.Player\Player.cs" />
