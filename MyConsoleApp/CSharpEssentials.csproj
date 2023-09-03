@@ -56,10 +56,11 @@
     <Compile Include="Intreface.Flat\EntranceEnumerator.cs" />
     <Compile Include="Equals.Player\Player.cs" />
     <Compile Include="Intreface.Flat\Flat.cs" />
-    <Compile Include="IUsersStorage.cs" />
+    <Compile Include="Interface.User\IUsersStorage.cs" />
+    <Compile Include="Extentions.CharCount\StringHelpers.cs" />
     <Compile Include="Struct_Money\Money.cs" />
     <Compile Include="Static method Point\Point.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Interface.User\User.cs" />
     <Compile Include="User.Person.Community\Community.cs" />
     <Compile Include="Summator\CubeSummator.cs" />
     <Compile Include="DateConvertion\EuropeanDate.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="Summator\Summator.cs" />
     <Compile Include="User.Person.Community\User.cs" />
     <Compile Include="HeadHunter\Vacancy.cs" />
-    <Compile Include="UsersInMemoryStorage.cs" />
+    <Compile Include="Interface.User\UsersInMemoryStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -83,7 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IntegrationTests\" />
-    <Folder Include="Interface.User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />

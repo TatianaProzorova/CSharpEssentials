@@ -1,7 +1,8 @@
-﻿using MyConsoleApp;
+﻿using CSharpEssentials;
+using System;
 using System.Linq.Expressions;
 
-namespace MyConsoleApp
+namespace CSharpEssentials
 {
 
     class Program
