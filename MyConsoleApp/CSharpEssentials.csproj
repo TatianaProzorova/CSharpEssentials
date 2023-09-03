@@ -62,6 +62,9 @@
     <Compile Include="Interface.User\IUsersStorage.cs" />
     <Compile Include="Extentions.CharCount\StringHelpers.cs" />
     <Compile Include="Extentions.GetSumCost\Product.cs" />
+    <Compile Include="Extentions.ToProductViewModel\ProductDb.cs" />
+    <Compile Include="Extentions.ToProductViewModel\ProductView.cs" />
+    <Compile Include="Extentions.ToProductViewModel\ProductViewModel.cs" />
     <Compile Include="Struct_Money\Money.cs" />
     <Compile Include="Static method Point\Point.cs" />
     <Compile Include="Interface.User\User.cs" />
