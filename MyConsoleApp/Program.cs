@@ -1,5 +1,6 @@
 ﻿using CSharpEssentials;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -7,46 +8,64 @@ using System.Numerics;
 
 namespace CSharpEssentials
 {
-    public class FibonacciCounter
+    public class CustomIterator : IEnumerable, IEnumerable<int>, IEnumerator, IEnumerator<int>, IDisposable
     {
-        public void Count(long x)
-        {
-            var fibonacciNumbers = GetFibonacciNumbers(x);
+        public object Current => throw new NotImplementedException();
 
-            foreach (var number in fibonacciNumbers)
-            {
-                Console.WriteLine(number);
-            }
+        int IEnumerator<int>.Current => throw new NotImplementedException();
+
+        public void Dispose()
+        {
         }
 
-        private static List<BigInteger> GetFibonacciNumbers(long input)
+        public IEnumerator GetEnumerator()
         {
-            var fibonacci = new List<BigInteger> ();
-            BigInteger previous = 0; 
-            BigInteger current = 1;
-            BigInteger preliminarySum = 1;
-            long count = fibonacci.Count;
+            throw new NotImplementedException();
+        }
 
-            while (count < input)
-            {
-                fibonacci.Add(previous);
-                
-                preliminarySum = previous + current;
-                previous = current;
-                current = preliminarySum;                
+        public bool MoveNext()
+        {
+            throw new NotImplementedException();
+        }
 
-                count++;
-            }
+        public void Reset()
+        {
+        }
 
-            return fibonacci;
+        IEnumerator<int> IEnumerable<int>.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
+
+    static class Where
+    {
+        static IEnumerable<T> MyWhere<T>(this IEnumerable<T> items, Func<T, bool> predicate)
+        {
+            var result = new List<T>();
+            foreach (var item in items)
+            {
+                if (predicate(item))
+                {
+                    result.Add(item);
+                }
+            }
+
+            return result;
+        }
+    }
+
 
     class Program
     {
         static void Main(string[] args)
         {
+            var iterator = new CustomIterator();
 
+            foreach (var item in iterator)
+            {
+                Console.Write(item + ", ");
+            }
         }
     }
 }
